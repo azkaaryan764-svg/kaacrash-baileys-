@@ -1,0 +1,18 @@
+{
+    "name": "kaacrash-bot",
+    "version": "1.0.0",
+    "description": "Bot WhatsApp KAACRASH",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "@whiskeysockets/baileys": "latest",
+        "chalk": "^4.1.2",
+        "fs": "latest",
+        "jimp": "^1.6.1",
+        "moment-timezone": "latest",
+        "pino": "^9.5.0",
+        "readline-sync": "^1.4.10"
+    }
+}
