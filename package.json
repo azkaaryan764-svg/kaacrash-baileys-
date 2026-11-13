@@ -1,18 +1,80 @@
 {
-    "name": "kaacrash-bot",
-    "version": "1.0.0",
-    "description": "Bot WhatsApp KAACRASH",
-    "main": "index.js",
-    "scripts": {
-        "start": "node index.js"
+  "name": "@kaacrash/baileys",
+  "version": "1.0.0",
+  "description": "Kaacrash Baileys - Forked from WhiskeySockets",
+  "keywords": [
+    "whatsapp",
+    "automation",
+    "baileys"
+  ],
+  "homepage": "https://github.com/kaacrash/baileys/",
+  "repository": {
+    "url": "git+https://github.com/kaacrash/baileys.git"
+  },
+  "license": "MIT",
+  "author": "kaacrash",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*",
+    "WAProto/**/*",
+    "engine-requirements.js"
+  ],
+  "scripts": {
+    "build": "tsc -P tsconfig.build.json && tsc-esm-fix --tsconfig=tsconfig.build.json --ext=.js",
+    "prepare": "npm run build",
+    "preinstall": "node ./engine-requirements.js"
+  },
+  "dependencies": {
+    "@cacheable/node-cache": "^1.4.0",
+    "@hapi/boom": "^9.1.3",
+    "async-mutex": "^0.5.0",
+    "crypto-js": "^4.2.0",
+    "libsignal": "^6.0.0",
+    "lru-cache": "^11.1.0",
+    "music-metadata": "^11.12.3",
+    "p-queue": "^9.0.0",
+    "pino": "^9.6",
+    "protobufjs": "^7.5.6",
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^8.0.1",
+    "@babel/core": "^8.0.1",
+    "@babel/plugin-transform-export-namespace-from": "^8.0.1",
+    "@babel/plugin-transform-modules-commonjs": "^8.0.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20.9.0",
+    "@types/ws": "^8.0.0",
+    "@whiskeysockets/eslint-config": "^1.0.0",
+    "esbuild-register": "^3.6.0",
+    "jest": "^30.0.5",
+    "jimp": "^1.6.1",
+    "link-preview-js": "^3.0.0",
+    "ts-jest": "^29.4.0",
+    "tsc-esm-fix": "^3.1.2",
+    "tsx": "^4.20.3",
+    "typedoc": "^0.27.9",
+    "typescript": "^5.8.2"
+  },
+  "peerDependencies": {
+    "audio-decode": "^2.1.3",
+    "jimp": "^1.6.1",
+    "link-preview-js": "^3.0.0",
+    "sharp": "*"
+  },
+  "peerDependenciesMeta": {
+    "audio-decode": {
+      "optional": true
     },
-    "dependencies": {
-        "@whiskeysockets/baileys": "latest",
-        "chalk": "^4.1.2",
-        "fs": "latest",
-        "jimp": "^1.6.1",
-        "moment-timezone": "latest",
-        "pino": "^9.5.0",
-        "readline-sync": "^1.4.10"
+    "jimp": {
+      "optional": true
+    },
+    "link-preview-js": {
+      "optional": true
     }
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
 }
